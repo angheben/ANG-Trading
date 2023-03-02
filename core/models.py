@@ -2,8 +2,19 @@ from django.db import models
 from stdimage.models import StdImageField
 
 
-class Employees(models.Model):
-    pass
+class Employee(models.Model):
+    name = models.CharField(name="Name", max_length=100)
+    role = models.CharField('core.Role', name='Role', max_length=100)
+    bio = models.TextField('Bio', max_length=200)
+    image = StdImageField(name='Image', upload_to='team', variations={"thumb": {"width": 480, 'height': 480,
+                                                                                'crop': True}}, default="N/A")
+    facebook = models.CharField("Facebook", max_length=100, default='#')
+    twitter = models.CharField("Twitter", max_length=100, default='#')
+    instagram = models.CharField("Instagram", max_length=100, default='#')
+
+    class Meta:
+        verbose_name = 'Employee'
+        verbose_name_plural = 'Employees'
 
 
 class Testimonial(models.Model):
@@ -14,7 +25,7 @@ class Features(models.Model):
     pass
 
 
-class Services(models.Model):
+class Service(models.Model):
     ICON_CHOICES = (
         ('lni-cog', 'Gear'),
         ('lni-stats-up', 'Graphic'),
@@ -23,6 +34,10 @@ class Services(models.Model):
         ('lni-mobile', 'Mobile'),
         ('lni-rocket', 'Rocket')
     )
-    service = models.CharField(name='service', max_length=100)
-    description = models.CharField(name='description', max_length=100)
-    choices = models.CharField(name='choices', max_length=100, choices=ICON_CHOICES)
+    service = models.CharField(name='Service', max_length=100)
+    description = models.TextField(name='Description', max_length=100)
+    choices = models.CharField(name='Icon', max_length=100, choices=ICON_CHOICES)
+
+    class Meta:
+        verbose_name = 'Services'
+        verbose_name_plural = 'Services'
