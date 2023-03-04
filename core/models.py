@@ -32,7 +32,18 @@ class Service(models.Model):
         ('lni-users', 'Users'),
         ('lni-layers', 'Design'),
         ('lni-mobile', 'Mobile'),
-        ('lni-rocket', 'Rocket')
+        ('lni-rocket', 'Rocket'),
+        ('lni-linkedin', 'Linkedin'),
+        ('lni-car', 'Car'),
+        ('lni-chevron-left', 'Left Arrow'),
+        ('lni-chevron-right', 'Right Arrow'),
+        ('lni-chrome', 'Chrome'),
+        ('lni-comments', 'Comments'),
+        ('lni-check-box', 'Slá'),
+        ('lni-list', 'Document'),
+        ('lni-map', 'Map'),
+        ('lni-move', 'Move'),
+        ('lni-package', 'Package')
     )
     service = models.CharField(name='Service', max_length=100)
     description = models.TextField(name='Description', max_length=100)
