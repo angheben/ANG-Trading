@@ -16,6 +16,9 @@ class Employee(models.Model):
         verbose_name = 'Employee'
         verbose_name_plural = 'Employees'
 
+    def __str__(self):
+        return self.name
+
 
 class Testimonial(models.Model):
     pass
@@ -43,7 +46,8 @@ class Service(models.Model):
         ('lni-list', 'Document'),
         ('lni-map', 'Map'),
         ('lni-move', 'Move'),
-        ('lni-package', 'Package')
+        ('lni-package', 'Package'),
+        ('lni-world', 'World')
     )
     service = models.CharField(name='Service', max_length=100)
     description = models.TextField(name='Description', max_length=100)
