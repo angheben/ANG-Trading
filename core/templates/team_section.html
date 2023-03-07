@@ -1,8 +1,9 @@
+
 {% load static %}
 <section id="team" class="section-padding bg-gray">
       <div class="container">
         <div class="section-header text-center">
-          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Meet our team</h2>
+          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s"> Nosso Time </h2>
           <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
         </div>
         <div class="row">
@@ -12,14 +13,14 @@
             <!-- Team Item Starts -->
             <div class="team-item wow fadeInRight" data-wow-delay="0.2s">
               <div class="team-img">
-                <img class="img-fluid" src="{{ e.image.thumb.url }}" alt="">
+                <img class="img-fluid" src="{{ e.Image.thumb.url }}" alt="">
               </div>
-              <div class="content">
+              <div class="contetn">
                 <div class="info-text">
-                  <h3><a href="#"> {{ e.name }} </a></h3>
-                  <p> {{ e.role }} </p>
+                  <h3><a href="#"> {{ e.Name }} </a></h3>
+                  <p> {{ e.Role }} </p>
                 </div>
-                <p>{{ e.bio }}</p>
+                <p>{{ e.Bio }}</p>
                 <ul class="social-icons">
                   <li><a href="{{ e.facebook }}"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
                   <li><a href="{{ e.twitter }}"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
@@ -30,6 +31,9 @@
             <!-- Team Item Ends -->
           {% endfor %}
           </div>
+          <div class="col-md-5" style="justify-content: center; align-items: flex-end; margin-top: 160px;">
+          <img class="img-fluid" data-wow-delay="0.2s" src="{% static 'images/options/option2.png' %}" >
+        </div>
         </div>
       </div>
     </section>

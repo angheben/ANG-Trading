@@ -5,19 +5,13 @@ from stdimage.models import StdImageField
 class Employee(models.Model):
     name = models.CharField(name="Name", max_length=100)
     role = models.CharField('core.Role', name='Role', max_length=100)
-    bio = models.TextField('Bio', max_length=200)
+    bio = models.TextField(name='Bio', max_length=200)
     image = StdImageField(name='Image', upload_to='team', variations={"thumb": {"width": 480, 'height': 480,
                                                                                 'crop': True}}, default="N/A")
-    facebook = models.CharField("Facebook", max_length=100, default='#')
-    twitter = models.CharField("Twitter", max_length=100, default='#')
-    instagram = models.CharField("Instagram", max_length=100, default='#')
 
     class Meta:
         verbose_name = 'Employee'
         verbose_name_plural = 'Employees'
-
-    def __str__(self):
-        return self.name
 
 
 class Testimonial(models.Model):
