@@ -5,7 +5,7 @@ from stdimage.models import StdImageField
 class Employee(models.Model):
     name = models.CharField(name="Name", max_length=100)
     role = models.CharField('core.Role', name='Role', max_length=100)
-    bio = models.TextField(name='Bio', max_length=200)
+    bio = models.TextField(name='Bio', max_length=200, default="N/A")
     image = StdImageField(name='Image', upload_to='team', variations={"thumb": {"width": 480, 'height': 480,
                                                                                 'crop': True}}, default="N/A")
 
@@ -15,11 +15,17 @@ class Employee(models.Model):
 
 
 class Testimonial(models.Model):
-    pass
+    company = models.CharField(name='Company', max_length=100, default="N/A")
+    description = models.TextField(name='Description', max_length=300, default="N/A")
+    logo = StdImageField(name='Logo', upload_to='testimonial', variations={"thumb": {"width": 300, 'height': 300,
+                                                                                     'crop': True}}, default="N/A")
 
+    def __str__(self):
+        return self.company
 
-class Features(models.Model):
-    pass
+    class Meta:
+        verbose_name = 'Testimonial'
+        verbose_name_plural = 'Testimonials'
 
 
 class Service(models.Model):

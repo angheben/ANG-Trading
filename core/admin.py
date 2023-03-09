@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Service, Features, Testimonial, Employee
+from .models import Service, Testimonial, Employee
 
 
 @admin.register(Service)
@@ -10,3 +10,8 @@ class ServicesAdmin(admin.ModelAdmin):
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
     list_display = ("Name", "Role", "Image")
+
+
+@admin.register(Testimonial)
+class TestimonialAdmin(admin.ModelAdmin):
+    list_display = ("Company", "Description", "Logo")

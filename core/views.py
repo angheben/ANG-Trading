@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from .models import Service, Employee
+from .models import Service, Employee, Testimonial
 
 
 class IndexView(TemplateView):
@@ -16,4 +16,5 @@ class IndexView(TemplateView):
         context = super(IndexView, self).get_context_data(**kwargs)
         context['service'] = Service.objects.all()
         context['employee'] = Employee.objects.all()
+        context['testimonial'] = Testimonial.objects.all()
         return context
