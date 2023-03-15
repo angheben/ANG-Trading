@@ -1,0 +1,1 @@
+web: gunicorn ang_trading.wsgi --log-file -
